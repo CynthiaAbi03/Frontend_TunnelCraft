@@ -1,0 +1,14 @@
+.body_container00 {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding-left: 50px;
+    max-width: 1300px;
+    padding-top: 20px;
+    
+}
+
+.body_container00 p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
