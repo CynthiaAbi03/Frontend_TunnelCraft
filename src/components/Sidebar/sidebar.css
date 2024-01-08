@@ -94,7 +94,7 @@
     font-weight: 500;
 }
 
-.link {
+.link22 {
     margin-top: 0;
     display: flex;
     text-decoration: none;
@@ -106,7 +106,7 @@
    
 }
 
-.link:hover {
+.link22:hover {
     color: white;
     font-weight: bolder;
 }

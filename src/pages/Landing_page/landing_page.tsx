@@ -1,9 +1,11 @@
 import React from 'react'
 import './landing_page.css'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const landing_page = () => {
   return (
+    <>
     <div className='div'>
     <Navbar/>
     
@@ -18,8 +20,12 @@ const landing_page = () => {
         </div>
 
       </section>
+     
         
     </div>
+
+    <Footer/>
+  </>
 
   )
 }

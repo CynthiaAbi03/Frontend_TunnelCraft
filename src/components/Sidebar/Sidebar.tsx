@@ -10,12 +10,25 @@ import { IoMenu } from "react-icons/io5";
 import { log } from 'console';
 import './sidebar.css'
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../Contexts/AuthContext';
 
 type SidebarProps = {
     children: ReactNode;
   };
   
   const Sidebar = ({ children}: SidebarProps): JSX.Element => {
+
+ const {AuthUser} = useAuth();
+
+
+ const userEmail:string = AuthUser && AuthUser.email ? AuthUser.email: '';
+
+ const firstLetterOfEmail = (str: string) => {
+    return str.charAt(0).toUpperCase();
+ }
+
+ const emailLetter : string = firstLetterOfEmail(userEmail);
+
 
   const [isButtonClicked, setIsButtonClicked] = useState(true);
   const [isDropdown, setIsDropdown] = useState(false);
@@ -76,7 +89,7 @@ type SidebarProps = {
             <div>
             {
                 menuItems.map((item, index)=>(
-                    <NavLink to={item.path} key={index} className='link'>
+                    <NavLink to={item.path} key={index} className='link22'>
                         <div className="icons2">{item.icon}</div>
                         <div className="link_text" style={{display: isButtonClicked? 'block': 'none'}}>{item.name}</div>
                     </NavLink>
@@ -86,6 +99,8 @@ type SidebarProps = {
             }
             </div>
             <div className='Name-icon'>
+                {/* <p>{emailLetter}</p>
+                <p>{userEmail}</p> */}
                 <p>A</p>
                 <p style={{display: isButtonClicked? 'block': 'none'}}>abicynthia@gmail.com</p>
             </div>

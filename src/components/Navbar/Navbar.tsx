@@ -8,9 +8,9 @@ const Navbar = () => {
       <nav>
         <img src={logo}></img>
             <ul>
-                <li><a href="#" className='hover-link link'>À propos</a></li>
-                <li><a href="#" className='hover-link1 link'>Aide</a></li>
-                <li><a href="#" className='hover-link2 link '>Contact</a></li>
+                <li><a href="#Footer" className='link'>À propos</a></li>
+                <li><a href="#Footer" className='link'>Aide</a></li>
+                <li><a href="#Footer" className='link '>Contact</a></li>
                 <li><a href="/connection" className='connection-btn'>Connexion</a></li>
                 <li><a href="/connection" className='signup-btn'>Inscription</a></li>
             </ul>

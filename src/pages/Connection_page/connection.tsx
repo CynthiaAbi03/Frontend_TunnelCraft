@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './connection.css'
+import {useAuth} from '../../Contexts/AuthContext'
 import logo from '../../assets/images/TunnelCraft.png'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import  PasswordChecklist from 'react-password-checklist'
 import axios from 'axios'
-import { API, apiRegister, apiLogin } from '../../api/api';
+import {  apiRegister, apiLogin } from '../../api/api';
 
 
 const Connection = () => {
@@ -44,11 +45,12 @@ const Connection = () => {
   
   const emailformat: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ 
 
+  const { setAuthUser } = useAuth();
+  const { setisLoggedIn} = useAuth();
 
 
   const submitInscription = async () => {
 
-    console.log('api_error', apiRegister)
 
     if(!name || !email || !password || !confirmPassword || !email.match(email)){
 
@@ -83,10 +85,14 @@ const Connection = () => {
           password: password
         };
 
+        setAuthUser(inscriptionForm);
+
         const response = await axios.post(apiRegister, inscriptionForm)
         const data1 = response.data;
           console.log(data1);
           if (response.data.success) {
+          setAuthUser(inscriptionForm);
+          setisLoggedIn(true)
           navigate('/acceuil')
           };
           setisSubmit(true)
@@ -112,7 +118,7 @@ const Connection = () => {
 
 
   const submitConnexion = async() => {
-      
+
     if(!password || (email.length === 0) || (!email.match(emailformat))){
 
       if (!password) {
@@ -138,6 +144,8 @@ const Connection = () => {
         const response = await axios.post( apiLogin , connexionForm)
         console.log(response.data);
         if (response.data.success) { 
+        setAuthUser(connexionForm);
+        setisLoggedIn(true)
         navigate('/acceuil')
         }
 
