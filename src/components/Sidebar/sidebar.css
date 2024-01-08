@@ -72,13 +72,13 @@
 
 .page_content {
     display: flex;
+    
   
 }
 .sidebar {
     background-color: #102754;
     height: 100vh;
     display: flex;
-    
     flex-direction: column;
     justify-content: space-between;
     transition: all .5s;
@@ -87,6 +87,7 @@
 }
 .icons2 {  
     font-size: 30px;
+    margin-left: 20px;
 }
 
 .link_text{
