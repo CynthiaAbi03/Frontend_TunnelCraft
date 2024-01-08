@@ -51,11 +51,11 @@ type SidebarProps = {
             name: 'Commencer',
             icon: <BsRocket/>
         },
-        {
-            path: '/applications',
-            name: 'Vos Applications',
-            icon: <TbArrowsExchange/>
-        },
+        // {
+        //     path: '/applications',
+        //     name: 'Vos Applications',
+        //     icon: <TbArrowsExchange/>
+        // },
         {
             path: '/token',
             name: 'Votre Token',
