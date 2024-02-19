@@ -1,0 +1,49 @@
+.body_container {
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    padding-left: 50px;
+    max-width: 1300px;
+    gap: 20px;
+}
+
+.container_text {
+    font-size: 20px;
+}
+.container_acceuil {
+    display: flex;
+    gap: 30px;
+    border: 3px solid #3E1886;
+    border-radius: 10px;
+    padding: 20px;
+    width: 800px;
+    font-size: 18px;
+    background-color: white;
+    margin-top: 40px;
+
+}
+
+.rocket_icon1 {
+    font-size: 50px;
+    color: black;
+}
+
+.container_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_content h3{
+    color: #3E1886;
+}
+
+.container_content a {
+    text-decoration: none;
+    color: #3E1886;
+    font-weight: 500;
+}
+
+.container_content a:hover {
+    color: #102754;
+}
